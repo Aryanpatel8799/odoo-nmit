@@ -90,12 +90,12 @@ export class AuthController {
 
       // Generate tokens
       const accessToken = JWTUtils.generateAccessToken({
-        userId: user._id.toString(),
+        userId: (user._id as any).toString(),
         email: user.email,
       });
 
       const refreshToken = JWTUtils.generateRefreshToken({
-        userId: user._id.toString(),
+        userId: (user._id as any).toString(),
         email: user.email,
       });
 
